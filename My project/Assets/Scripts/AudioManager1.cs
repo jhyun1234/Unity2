@@ -13,6 +13,7 @@ public class AudioManager1 : MonoBehaviour
     public AudioClip bgm;
     public AudioClip sfx;
     public AudioClip charv;
+    /*
     private void Awake()
     {
         if (Instance == null)
@@ -25,6 +26,7 @@ public class AudioManager1 : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    */
     public void PlayBGM()
     {
         bgmSource.clip = bgm;
