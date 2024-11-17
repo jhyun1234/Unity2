@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+   
 
+    
     public void OnClickStart()
     {
         Debug.Log("½ÃÀÛ");
+        SceneManager.LoadScene("Start");
         
     }
 
@@ -25,7 +27,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("¿É¼Ç");
         SceneManager.LoadScene("Option");
     }
-    public void OnClickGallery()
+    public void OnClickAlbum()
     {
         Debug.Log("°¶·¯¸®");
         SceneManager.LoadScene("Album");
@@ -34,12 +36,12 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("³ª°¡Áü");
         SceneManager.LoadScene("Main");
-        
+
 
     }
     public void OnClickexit()
     {
-
+        
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
      if(Input.GetKeyDown(KeyCode.Escape))
