@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class Volume : MonoBehaviour
 {
+    public static Volume Instance;
     public AudioMixer myMixer;
     public Slider MasterSlider;
     public Slider bgmSlider;
@@ -15,8 +17,17 @@ public class Volume : MonoBehaviour
     
     private void Start() 
     {
-        DontDestroyOnLoad(gameObject); 
-        LoadVolumes();
+       if(Instance == null)
+       {
+            Instance = this;
+            LoadVolumes();
+            DontDestroyOnLoad(gameObject);
+       }
+       else
+       {
+            Destroy(gameObject);
+       }
+        
         /*
         if (PlayerPrefs.HasKey("MasterVolume")&& PlayerPrefs.HasKey("bgmVolume") && PlayerPrefs.HasKey("sfxVolume") && PlayerPrefs.HasKey("charVolume"))
         {
