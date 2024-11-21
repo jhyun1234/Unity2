@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
    
-
+    
     
     public void OnClickStart()
     {
         Debug.Log("Ω√¿€");
         SceneManager.LoadScene("Start");
-        
+      
     }
 
     public void OnClickLoad()
@@ -39,17 +39,5 @@ public class MainMenu : MonoBehaviour
 
 
     }
-    public void OnClickexit()
-    {
-        
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-     if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-#else
-        Application.Quit();
-#endif
-    }
+ 
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Volume : MonoBehaviour
@@ -14,79 +15,29 @@ public class Volume : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
     public Slider charSlider;
-    
-    private void Start() 
+
+
+
+    private void Awake()
     {
-       if(Instance == null)
-       {
-            Instance = this;
-            LoadVolumes();
-            DontDestroyOnLoad(gameObject);
-       }
-       else
-       {
-            Destroy(gameObject);
-       }
-        
-        /*
-        if (PlayerPrefs.HasKey("MasterVolume")&& PlayerPrefs.HasKey("bgmVolume") && PlayerPrefs.HasKey("sfxVolume") && PlayerPrefs.HasKey("charVolume"))
+        if (Instance == null)
         {
-            LoadVolume();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            SetBGMVolume();
-            SetSFXVolume();
-            SetCharVolume();
-            SetMaster();
-        }*/
-    }
-    /*
-    public void SetMaster()  // 코드 간결화 전
-    {
-        float vloume = MasterSlider.value;
-        myMixer.SetFloat("Master", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("MasterVolume", vloume);
-        myMixer.SetFloat("BGM", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("bgmVolume", vloume);
-        myMixer.SetFloat("SFX", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("sfxVolume", vloume);
-        myMixer.SetFloat("CHAR", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("charVolume", vloume);
-    }
-    public void SetBGMVolume()
-    {
-        float vloume = bgmSlider.value;
-        myMixer.SetFloat("BGM", Mathf.Log10(vloume)*20);
-        PlayerPrefs.SetFloat("bgmVolume", vloume);
+            Destroy(gameObject);
+        }
     }
 
+    private void Start()
+    {
+        LoadVolumes();
+    }
+    
+   
 
-    public void SetSFXVolume()
-    {
-        float vloume = sfxSlider.value;
-        myMixer.SetFloat("SFX", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("sfxVolume", vloume);
-    }
-
-    public void SetCharVolume()
-    {
-        float vloume = charSlider.value;
-        myMixer.SetFloat("CHAR", Mathf.Log10(vloume) * 20);
-        PlayerPrefs.SetFloat("charVolume", vloume);
-    }
-    private void LoadVolume()
-    {
-        bgmSlider.value = PlayerPrefs.GetFloat("bgmVolume");
-        SetBGMVolume();
-        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
-        SetSFXVolume();
-        charSlider.value = PlayerPrefs.GetFloat("charVolume");
-        SetCharVolume();
-        MasterSlider.value = PlayerPrefs.GetFloat("MasterVolume");
-        SetMaster();
-    }
-    */
     private void LoadVolumes() // 코드 간결화
     {
         // PlayerPrefs에서 값을 가져오되, 존재하지 않으면 기본값 사용
