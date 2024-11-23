@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AudioManager1 : MonoBehaviour
 {
-    public AudioManager1 Instance;
+    
+    public static AudioManager1 Instance;
     public AudioSource bgmSource;
     public AudioSource sfxSource;
     public AudioSource charSource;
@@ -13,7 +14,7 @@ public class AudioManager1 : MonoBehaviour
     public AudioClip bgm;
     public AudioClip sfx;
     public AudioClip charv;
-    /*
+    
     private void Awake()
     {
         if (Instance == null)
@@ -26,14 +27,14 @@ public class AudioManager1 : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    */
+    
     
     public void PlayBGM()
     {
         bgmSource.clip = bgm;
         bgmSource.Play();
     }
-    
+    /*
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
@@ -42,6 +43,6 @@ public class AudioManager1 : MonoBehaviour
     {
         charSource.PlayOneShot(clip);
     }
-
+    */
 
 }

@@ -354,6 +354,7 @@
 -analyzer:"D:/unity/2022.3.28f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/AudioManager1.cs"
 "Assets/Scripts/Exitpanel.cs"
+"Assets/Scripts/FullScreen.cs"
 "Assets/Scripts/GameMG.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Volume.cs"

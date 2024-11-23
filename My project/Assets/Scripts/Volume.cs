@@ -16,7 +16,7 @@ public class Volume : MonoBehaviour
     public Slider sfxSlider;
     public Slider charSlider;
 
-
+   
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class Volume : MonoBehaviour
         MasterSlider.value = PlayerPrefs.GetFloat("MasterVolume");
         bgmSlider.value = PlayerPrefs.GetFloat("BGMVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        charSlider.value = PlayerPrefs.GetFloat("CharVolume");
+        charSlider.value = PlayerPrefs.GetFloat("CHARVolume");
 
         SetVolumes();
     }
@@ -64,4 +64,7 @@ public class Volume : MonoBehaviour
         PlayerPrefs.SetFloat(parameter + "Volume",value); // 변경된 볼륨 값을 PlayerPrefs에 저장하여 다음 실행 시에도 유지
         //PlayerPrefs는 작은 크기의 데이터를 저장하는 데 적합
     }
+
+   
+
 }

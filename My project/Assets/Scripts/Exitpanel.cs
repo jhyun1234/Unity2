@@ -6,19 +6,20 @@ using UnityEngine.SceneManagement;
 public class Exitpanel : MonoBehaviour
 {
     public GameObject ExitPanel;
-    
-    void Start()
-    {
-        ExitPanel.SetActive(false); // 팝업 창 비활성화
-    }
+    public static Exitpanel Instance; 
+
+
+   
 
     public void ShowPopup()
     {
         ExitPanel.SetActive(true); // 팝업 창 활성화
+        
     }
 
     public void YesButton()
     {
+        ExitPanel.SetActive(false);
         SceneManager.LoadScene("Main");
 
     }
@@ -38,6 +39,7 @@ public class Exitpanel : MonoBehaviour
     public void NoButton()
     {
         ExitPanel.SetActive(false); // 아니오 버튼 클릭 시 팝업 창 비활성화
+        
     }
     public void ExitScene()
     {

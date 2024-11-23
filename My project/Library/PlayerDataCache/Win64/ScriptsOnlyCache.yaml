@@ -1,8 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioManager1
+    - Exitpanel
+    - FullScreen
     - MainMenu
-    - Soundmanager
+    - Volume
     Unity.PlasticSCM.Editor.dll:
     - Unity.PlasticSCM.Editor.PlasticWindow
     Unity.Rider.Editor.dll:
@@ -42,6 +45,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -78,10 +82,17 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
+    - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
     methodName: OnClickLoad
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: OnClickAlbum
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: OnClickexit
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
     methodName: OnClickoption
@@ -89,26 +100,62 @@ ScriptsOnlyBuild:
     fullTypeName: MainMenu
     methodName: OnClickStart
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenu
-    methodName: OnClickexit
+    fullTypeName: Exitpanel
+    methodName: NoButton
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenu
-    methodName: OutScene
+    fullTypeName: Exitpanel
+    methodName: ExitScene
   - assembly: Assembly-CSharp
-    fullTypeName: Soundmanager
-    methodName: OnsfxVolumePlay
+    fullTypeName: Exitpanel
+    methodName: ShowPopup
   - assembly: Assembly-CSharp
-    fullTypeName: Soundmanager
-    methodName: SetbgmVolume
+    fullTypeName: Volume
+    methodName: SetVolumes
   - assembly: Assembly-CSharp
-    fullTypeName: Soundmanager
-    methodName: SetsfxVolume
+    fullTypeName: Volume
+    methodName: SetVolumes
   - assembly: Assembly-CSharp
-    fullTypeName: Soundmanager
-    methodName: OnsfxVolumePlay
+    fullTypeName: Volume
+    methodName: SetVolumes
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenu
-    methodName: OutScene
+    fullTypeName: Exitpanel
+    methodName: NoButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Volume
+    methodName: SetVolumes
+  - assembly: Assembly-CSharp
+    fullTypeName: FullScreen
+    methodName: ToggleFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: YesButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: ExitScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: YesButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: NoButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: NoButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: ExitScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: YesButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: NoButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: YesButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: ExitScene
   sceneClasses:
     Assets/Scenes/Album.unity:
     - Class: 1
@@ -130,14 +177,46 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1560}
+    - Class: 114
+      Script: {instanceID: 1602}
+    - Class: 114
       Script: {instanceID: 2606}
     - Class: 114
-      Script: {instanceID: 6054}
+      Script: {instanceID: 2810}
+    - Class: 114
+      Script: {instanceID: 3100}
+    - Class: 114
+      Script: {instanceID: 4722}
+    - Class: 114
+      Script: {instanceID: 4974}
+    - Class: 114
+      Script: {instanceID: 5284}
+    - Class: 114
+      Script: {instanceID: 5442}
+    - Class: 114
+      Script: {instanceID: 5588}
+    - Class: 114
+      Script: {instanceID: 6058}
+    - Class: 114
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 7104}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Load.unity:
     - Class: 1
@@ -169,19 +248,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 4720}
+      Script: {instanceID: 4722}
     - Class: 114
-      Script: {instanceID: 4972}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5584}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 6054}
+      Script: {instanceID: 5588}
     - Class: 114
-      Script: {instanceID: 6388}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 7102}
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 7104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -215,6 +296,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -234,19 +319,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4078}
     - Class: 114
-      Script: {instanceID: 4330}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 5036}
+      Script: {instanceID: 4332}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5038}
     - Class: 114
-      Script: {instanceID: 5584}
+      Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5736}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 6054}
+      Script: {instanceID: 5588}
     - Class: 114
-      Script: {instanceID: 6388}
+      Script: {instanceID: 5740}
+    - Class: 114
+      Script: {instanceID: 6058}
+    - Class: 114
+      Script: {instanceID: 6392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -263,6 +352,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
     Assets/Scenes/Option.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -278,15 +373,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1602}
@@ -297,21 +386,86 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 4964}
+      Script: {instanceID: 4918}
     - Class: 114
-      Script: {instanceID: 5036}
+      Script: {instanceID: 4966}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5038}
     - Class: 114
-      Script: {instanceID: 5584}
+      Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5736}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 6054}
+      Script: {instanceID: 5588}
     - Class: 114
-      Script: {instanceID: 6388}
+      Script: {instanceID: 5740}
     - Class: 114
-      Script: {instanceID: 28370}
+      Script: {instanceID: 6058}
+    - Class: 114
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 7642}
+    - Class: 114
+      Script: {instanceID: 57516}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    Assets/Scenes/Start.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1602}
+    - Class: 114
+      Script: {instanceID: 2606}
+    - Class: 114
+      Script: {instanceID: 2810}
+    - Class: 114
+      Script: {instanceID: 3100}
+    - Class: 114
+      Script: {instanceID: 5284}
+    - Class: 114
+      Script: {instanceID: 5442}
+    - Class: 114
+      Script: {instanceID: 5588}
+    - Class: 114
+      Script: {instanceID: 6058}
+    - Class: 114
+      Script: {instanceID: 6392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -793,6 +947,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: bfa6a4d4a7f9afd90fae9a3749c89fb3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioManager1
+  - hash:
+      serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1003,6 +1163,12 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
+      Hash: e38ed543b62bb0d5d8906c670d195224
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Exitpanel
+  - hash:
+      serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1133,12 +1299,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 9dd480584bbc9cf74cb6e7fb8a26c924
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SliderController
   - hash:
       serializedVersion: 2
       Hash: 4878e735441f4041539853759559c86f
@@ -1333,6 +1493,12 @@ ScriptsOnlyBuild:
     className: VertexZoom
   - hash:
       serializedVersion: 2
+      Hash: cdf0c5378a16b3972e7111878a2d66c0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Volume
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1375,14 +1541,15 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4d22fd0e685fef11b145210690513707
+      Hash: 505aada4bfdc2eb3e11e8497632a6a07
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Soundmanager
+    className: FullScreen
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity
   - Assets/Scenes/Option.unity
   - Assets/Scenes/Load.unity
   - Assets/Scenes/Album.unity
+  - Assets/Scenes/Start.unity
   playerPath: C:/Users/User A/Desktop/Study1/Unity2/My project.exe
