@@ -3,8 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager1
     - Exitpanel
-    - FullScreen
     - MainMenu
+    - OptionPanel
+    - ScreenModeManager
+    - TextType
     - Volume
     Unity.PlasticSCM.Editor.dll:
     - Unity.PlasticSCM.Editor.PlasticWindow
@@ -38,11 +40,14 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -76,10 +81,14 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.Dropdown/DropdownEvent
+    - UnityEngine.UI.Dropdown/OptionData
+    - UnityEngine.UI.Dropdown/OptionDataList
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
@@ -88,14 +97,23 @@ ScriptsOnlyBuild:
     fullTypeName: MainMenu
     methodName: OnClickLoad
   - assembly: Assembly-CSharp
+    fullTypeName: Volume
+    methodName: Start
+  - assembly: Assembly-CSharp
+    fullTypeName: Volume
+    methodName: Start
+  - assembly: Assembly-CSharp
     fullTypeName: MainMenu
     methodName: OnClickAlbum
   - assembly: Assembly-CSharp
     fullTypeName: Exitpanel
-    methodName: OnClickexit
+    methodName: YesButton
   - assembly: Assembly-CSharp
-    fullTypeName: MainMenu
-    methodName: OnClickoption
+    fullTypeName: Volume
+    methodName: Start
+  - assembly: Assembly-CSharp
+    fullTypeName: OptionPanel
+    methodName: OpPanel
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
     methodName: OnClickStart
@@ -104,7 +122,28 @@ ScriptsOnlyBuild:
     methodName: NoButton
   - assembly: Assembly-CSharp
     fullTypeName: Exitpanel
-    methodName: ExitScene
+    methodName: OnClickexit
+  - assembly: Assembly-CSharp
+    fullTypeName: ScreenModeManager
+    methodName: Start
+  - assembly: Assembly-CSharp
+    fullTypeName: TextType
+    methodName: OnSpeedChange
+  - assembly: Assembly-CSharp
+    fullTypeName: TextType
+    methodName: OnSpeedChange
+  - assembly: Assembly-CSharp
+    fullTypeName: TextType
+    methodName: OnSpeedChange
+  - assembly: Assembly-CSharp
+    fullTypeName: Volume
+    methodName: Start
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: NoButton
+  - assembly: Assembly-CSharp
+    fullTypeName: Exitpanel
+    methodName: YesButton
   - assembly: Assembly-CSharp
     fullTypeName: Exitpanel
     methodName: ShowPopup
@@ -118,17 +157,8 @@ ScriptsOnlyBuild:
     fullTypeName: Volume
     methodName: SetVolumes
   - assembly: Assembly-CSharp
-    fullTypeName: Exitpanel
-    methodName: NoButton
-  - assembly: Assembly-CSharp
     fullTypeName: Volume
     methodName: SetVolumes
-  - assembly: Assembly-CSharp
-    fullTypeName: FullScreen
-    methodName: ToggleFullScreen
-  - assembly: Assembly-CSharp
-    fullTypeName: Exitpanel
-    methodName: YesButton
   - assembly: Assembly-CSharp
     fullTypeName: Exitpanel
     methodName: ExitScene
@@ -179,13 +209,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 2812}
     - Class: 114
       Script: {instanceID: 4722}
     - Class: 114
@@ -193,15 +223,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6392}
+      Script: {instanceID: 6396}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7110}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -240,13 +270,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 2812}
     - Class: 114
       Script: {instanceID: 4722}
     - Class: 114
@@ -254,15 +284,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6392}
+      Script: {instanceID: 6396}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7110}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -305,15 +335,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2186}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2188}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 2812}
+    - Class: 114
+      Script: {instanceID: 3852}
     - Class: 114
       Script: {instanceID: 3972}
     - Class: 114
@@ -323,19 +355,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4332}
     - Class: 114
+      Script: {instanceID: 4918}
+    - Class: 114
+      Script: {instanceID: 4966}
+    - Class: 114
       Script: {instanceID: 5038}
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5370}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5740}
+      Script: {instanceID: 5470}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 6392}
+      Script: {instanceID: 5744}
+    - Class: 114
+      Script: {instanceID: 6062}
+    - Class: 114
+      Script: {instanceID: 6070}
+    - Class: 114
+      Script: {instanceID: 6396}
+    - Class: 114
+      Script: {instanceID: 6824}
+    - Class: 114
+      Script: {instanceID: 6896}
+    - Class: 114
+      Script: {instanceID: 7110}
+    - Class: 114
+      Script: {instanceID: 7648}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -378,13 +428,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 2812}
     - Class: 114
       Script: {instanceID: 4918}
     - Class: 114
@@ -394,19 +444,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 5740}
+      Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6392}
+      Script: {instanceID: 6396}
     - Class: 114
-      Script: {instanceID: 7642}
+      Script: {instanceID: 7648}
     - Class: 114
-      Script: {instanceID: 57516}
+      Script: {instanceID: 31900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -449,23 +499,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1602}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2608}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 2812}
     - Class: 114
       Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5588}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 6058}
+      Script: {instanceID: 6062}
     - Class: 114
-      Script: {instanceID: 6392}
+      Script: {instanceID: 6396}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -489,6 +539,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 915204dac8acad99f076d6e72ada0a0f
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -723,12 +779,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ToggleGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 915204dac8acad99f076d6e72ada0a0f
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 593a641cd7822a10b9a54aa9eb5c3d5e
@@ -1157,6 +1207,12 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 2905e7ab0fb0246485ec6145b2f63c5b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScreenModeManager
+  - hash:
+      serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1167,6 +1223,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Exitpanel
+  - hash:
+      serializedVersion: 2
+      Hash: be68e987d1271436cc539044281cdd9a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OptionPanel
   - hash:
       serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
@@ -1403,6 +1465,12 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
+      Hash: f2de08f2054561c4378858d450ac6bd9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TextType
+  - hash:
+      serializedVersion: 2
       Hash: 4728e3d21cc2a12e391e71ec9b7eed0b
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1511,6 +1579,12 @@ ScriptsOnlyBuild:
     className: UnityOnToggleValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: d96f3521be4e32b752b3dd7f432e0fea
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OutPanel
+  - hash:
+      serializedVersion: 2
       Hash: 8bf800a764665b085fe469e8aea7f167
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1539,12 +1613,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 505aada4bfdc2eb3e11e8497632a6a07
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FullScreen
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity
@@ -1552,4 +1620,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Load.unity
   - Assets/Scenes/Album.unity
   - Assets/Scenes/Start.unity
-  playerPath: C:/Users/User A/Desktop/Study1/Unity2/My project.exe
+  playerPath: C:/Users/User A/Desktop/123/My project.exe

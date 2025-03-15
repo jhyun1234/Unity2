@@ -9,8 +9,6 @@ public class Exitpanel : MonoBehaviour
     public static Exitpanel Instance; 
 
 
-   
-
     public void ShowPopup()
     {
         ExitPanel.SetActive(true); // 팝업 창 활성화
@@ -25,7 +23,7 @@ public class Exitpanel : MonoBehaviour
     }
     public void OnClickexit()
     {
-
+       
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         if (Input.GetKeyDown(KeyCode.Escape))

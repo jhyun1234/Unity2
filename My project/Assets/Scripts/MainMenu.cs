@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   
+    
     public void OnClickStart()
     {
         Debug.Log("시작");
@@ -18,13 +18,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("불러오기");
         SceneManager.LoadScene("Load");
     }
-
-    public void OnClickoption()
-    {
-        
-        Debug.Log("옵션");
-        SceneManager.LoadScene("Option");
-    }
+ 
+    
     public void OnClickAlbum()
     {
         Debug.Log("갤러리");
@@ -34,7 +29,6 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("나가짐");
         SceneManager.LoadScene("Main");
-
 
     }
  
